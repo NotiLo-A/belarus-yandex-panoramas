@@ -31,9 +31,9 @@ This repository presents a comprehensive dataset comprising geographical coordin
 ```
 
 ## Dataset Overview and Spatial Distribution
-The dataset presented herein was systematically acquired on **June 18, 2026**. It aggregates a total of 258,443 precise geospatial coordinate points across six major administrative subdivisions. The proportional distribution of panoramic points is illustrated below:
+The dataset presented herein was systematically acquired on **November 3, 2026**. It aggregates a total of 259,536 precise geospatial coordinate points across six major administrative subdivisions. The proportional distribution of panoramic points is illustrated below:
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/d4bd56d3-8765-4af9-aaff-2eeea9d8a9ee" />
+<img width="500" alt="chart" src="https://github.com/user-attachments/assets/d5d635f3-ea38-44a5-9b61-3e3b844af75a" />
 
 
 | Administrative Division | Coordinate Points | Proportion |
