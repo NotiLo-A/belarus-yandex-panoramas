@@ -23,6 +23,8 @@ The dataset presented herein was systematically acquired on **November 3, 2026**
 | Vitebsk                 | 16,382            | 6.31%      |
 
 ## How it works
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/4b230c4d-49dc-47f6-8483-01847a517fab" />
+
 Open [`index.html`](index.html) through a local server, pick a starting point, and the page walks through connected Yandex panoramas directly in your browser. It handles rate limits automatically, saves progress in `IndexedDB` so you can pause and resume anytime, and lets you export the results as `.geojson` or `.coordinates.txt`.
 
 ## How to use
