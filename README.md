@@ -1,9 +1,5 @@
 # Belarus yandex panoramas
 
-<img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/5d5ef4b3-c090-4625-9fd5-d04c4dccf53e" />
-<img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/dc34ae1b-b093-41cb-9328-faa41f6b45b5" />
-<img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/fa252684-7393-4329-9a0d-0129632a8529" />
-
 <img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/0e74cae2-1483-47c4-b9ed-f8428ba939e9" />
 <img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/3d3c9632-c423-45ee-ac46-6f52c0e346d9" />
 <img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/1ce82e89-5c8d-4aa5-a5a1-f0bace0bb708" />
