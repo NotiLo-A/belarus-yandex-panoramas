@@ -4,31 +4,8 @@
 <img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/3d3c9632-c423-45ee-ac46-6f52c0e346d9" />
 <img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/1ce82e89-5c8d-4aa5-a5a1-f0bace0bb708" />
 
-## Abstract
-This repository presents a comprehensive dataset comprising geographical coordinates of Yandex Street View panoramas across the administrative centers of the Republic of Belarus. Furthermore, it provides the requisite data extraction and transformation utilities employed to compile this dataset. The collection aims to facilitate geospatial analysis, the development of location-based gamified applications, and geographic information system (GIS) modeling.
-
-## Directory Structure
-```text
-.
-├── converter.py
-├── geojson
-│   ├── brest.geojson
-│   ├── gomel.geojson
-│   ├── grodno.geojson
-│   ├── minsk.geojson
-│   ├── mogilev.geojson
-│   └── vitebsk.geojson
-├── json
-│   ├── brest.json
-│   ├── gomel.json
-│   ├── grodno.json
-│   ├── minsk.json
-│   ├── mogilev.json
-│   └── vitebsk.json
-├── LICENSE
-├── README.md
-└── scraper.js
-```
+## About
+Yandex Street View panorama dataset across Belarus - including coordinates, panorama IDs (`oid`, `imageId`), street names, capture dates and timestamps, camera origin, nearby address markers, companies, and historical panorama links - along with a browser-based parser ([`index.html`](index.html)) to collect your own. Ready-to-use datasets are available on the [Releases](https://github.com/NotiLo-A/belarus-yandex-panoramas/releases) page. Useful for maps, GeoGuessr-style games, and geospatial projects.
 
 ## Dataset Overview and Spatial Distribution
 The dataset presented herein was systematically acquired on **November 3, 2026**. It aggregates a total of 259,536 precise geospatial coordinate points across six major administrative subdivisions. The proportional distribution of panoramic points is illustrated below:
@@ -45,47 +22,23 @@ The dataset presented herein was systematically acquired on **November 3, 2026**
 | Mogilev                 | 19,270            | 7.42%      |
 | Vitebsk                 | 16,382            | 6.31%      |
 
-## Methodology
+## How it works
+Open [`index.html`](index.html) through a local server, pick a starting point, and the page walks through connected Yandex panoramas directly in your browser. It handles rate limits automatically, saves progress in `IndexedDB` so you can pause and resume anytime, and lets you export the results as `.geojson` or `.coordinates.txt`.
 
+## How to use
+If you just want the data, download the ready-made files from [Releases](https://github.com/NotiLo-A/belarus-yandex-panoramas/releases).
 
-### 1. Data Acquisition
-The data acquisition protocol leverages a concurrent, queue-based traversal algorithm implemented in JavaScript (`scraper.js`). The Yandex Maps panoramas are structured as an interconnected spatial graph. The scraping utility initializes with a seed Object ID (`oid`), retrieves the corresponding panoramic metadata via the internal Yandex API, and recursively enqueues contiguous panoramic nodes extrapolated from the topological properties.
-
-To optimize extraction velocity and mitigate latency, the script executes asynchronous HTTP requests employing batched concurrency. The extracted multidimensional coordinates are subsequently serialized into a `Blob` and exported to local storage as a JSON array.
-
-**Execution Duration:** The temporal overhead required to execute a complete urban graph traversal scales non-linearly, ranging from approximately **20 minutes to 2 hours**. This variance is strictly governed by network throughput, API responsiveness, rate-limiting constraints, and the absolute spatial density of the targeted municipality's panoramic nodes.
-
-### 2. Coordinate Transformation
-The extracted raw spatial data represents point locations in dynamic array configurations. The Python utility (`converter.py`) is designed specifically to convert these raw data arrays into the standardized GeoJSON format (`RFC 7946`). This algorithmic conversion yields a `FeatureCollection` composed of `Point` geometries, ensuring native compatibility with standard GIS rendering engines and spatial databases.
-
-
-## Usage Guidelines
-
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/80016af8-8df8-4ca1-8018-24acd1cb3291" />
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/8eade9b8-158d-416d-9241-aab5e3874114" />
-
-
-### Executing the Data Scraper
-
-1. Navigate to the Yandex Maps web interface.
-2. Enable the Panorama mode and select a targeted spatial location.
-3. Initialize the browser's Developer Tools and navigate to the Network inspector.
-4. Isolate the network request directed to `api-maps.yandex.ru` (ensure the response format is JSON).
-5. Extract the seed `oid` parameter from the request URL.
-6. Open the browser Console.
-7. Copy the entire source code from `scraper.js` and paste it into the console.
-8. Insert the extracted `oid` into the function call at the end of the script:
-
-```javascript
-scanEntireCityToBlobFast('YOUR_EXTRACTED_OID', 150000);
-```
-
-9. Press Enter to execute the script and initiate the automated graph traversal.
-
-### Executing the GeoJSON Conversion
-
-The conversion tool is strictly used to convert the raw JSON data extracted by the scraper into valid GeoJSON.
+To run the parser yourself, start a local HTTP server in this folder (needed for OpenStreetMap tiles to load properly):
 
 ```bash
-python converter.py input.json output.geojson
+npx serve
 ```
+
+```bash
+python3 -m http.server
+```
+
+1. Open the local URL in your browser (for example, `http://localhost:3000` or `http://localhost:8000`).
+2. Pick a city from the list, or add your own with **`+ add city`**.
+3. Choose where to start: check **`start by clicking the map`** and click on the map, press **`City center`**, or paste an OID, link, or coordinates into **`Panorama OID`**.
+4. Hit **`Start`** (you can **`Pause`** or **`Stop`** anytime) and export **`panoramas (.geojson)`** or **`Coordinates (.txt)`**.
