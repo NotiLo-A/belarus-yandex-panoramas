@@ -38,12 +38,12 @@ The dataset presented herein was systematically acquired on **November 3, 2026**
 
 | Administrative Division | Coordinate Points | Proportion |
 |-------------------------|-------------------|------------|
-| Minsk                   | 145,040           | 56.12%     |
-| Gomel                   | 36,256            | 14.03%     |
-| Brest                   | 21,593            | 8.35%      |
-| Grodno                  | 19,923            | 7.71%      |
-| Mogilev                 | 19,279            | 7.46%      |
-| Vitebsk                 | 16,352            | 6.33%      |
+| Minsk                   | 145,193           | 55.94%     |
+| Gomel                   | 36,983            | 14.25%     |
+| Brest                   | 21,784            | 8.39%      |
+| Grodno                  | 19,924            | 7.68%      |
+| Mogilev                 | 19,270            | 7.42%      |
+| Vitebsk                 | 16,382            | 6.31%      |
 
 ## Methodology
 
