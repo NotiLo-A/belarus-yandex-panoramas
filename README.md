@@ -30,17 +30,28 @@ Open [`index.html`](index.html) through a local server, pick a starting point, a
 ## How to use
 If you just want the data, download the ready-made files from [Releases](https://github.com/NotiLo-A/belarus-yandex-panoramas/releases).
 
-To run the parser yourself, start a local HTTP server in this folder (needed for OpenStreetMap tiles to load properly):
+To run the parser yourself:
 
-```bash
-npx serve
-```
+1. Clone the repository and open its folder:
 
-```bash
-python3 -m http.server
-```
+   ```bash
+   git clone https://github.com/NotiLo-A/belarus-yandex-panoramas.git
+   cd belarus-yandex-panoramas
+   ```
 
-1. Open the local URL in your browser (for example, `http://localhost:3000` or `http://localhost:8000`).
-2. Pick a city from the list, or add your own with **`+ add city`**.
-3. Choose where to start: check **`start by clicking the map`** and click on the map, press **`City center`**, or paste an OID, link, or coordinates into **`Panorama OID`**.
-4. Hit **`Start`** (you can **`Pause`** or **`Stop`** anytime) and export **`panoramas (.geojson)`** or **`Coordinates (.txt)`**.
+2. Start a local HTTP server (needed for OpenStreetMap tiles to load properly):
+
+   ```bash
+   npx serve
+   ```
+
+   or
+
+   ```bash
+   python3 -m http.server
+   ```
+
+3. Open the local URL in your browser (for example, `http://localhost:3000` or `http://localhost:8000`).
+4. Pick a city from the list, or add your own with **`+ add city`**.
+5. Choose where to start: check **`start by clicking the map`** and click on the map, press **`City center`**, or paste an OID, link, or coordinates into **`Panorama OID`**.
+6. Hit **`Start`** (you can **`Pause`** or **`Stop`** anytime) and export **`panoramas (.geojson)`** or **`Coordinates (.txt)`**.
